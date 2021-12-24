@@ -1,12 +1,14 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Help Page</title>
+    <title>Help Page Image</title>
   </head>
   <body>
     <h1>Welcome to help page</h1>
-    <p>Landed at correct page</p>
+    <p>Embedded image</p>
     <em>{{ help_page }}</em>
+    <img src="{% static 'images/image.jpeg' %}" alt="My image">
   </body>
 </html>
