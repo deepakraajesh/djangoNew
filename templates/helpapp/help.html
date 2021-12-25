@@ -3,13 +3,32 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Help Page Image</title>
+    <title>Models & Databases</title>
     <link rel="stylesheet" href="{% static "css/mystyle.css" %}">
   </head>
   <body>
-    <h1>Welcome to help page</h1>
-    <p>Embedded image</p>
-    <em>{{ help_page }}</em>
+    <h1>Welcome to Models & Databases</h1>
+    <p>below are the Access Records</p>
+    <div class="djangoclass">
+      {% if access_record %}
+      <table>
+        <thead>
+          <th>Site Name</th>
+          <th>Date Accessed</th>
+        </thead>
+        {% for acc in access_record %}
+        <tr>
+          <td>{{ acc.name }}</td>
+          <td>{{ acc.date }}</td>
+        </tr>
+        {% endfor %}
+      </table>
+      {% else %}
+        <p>Please update the records to show here</p>
+      {% endif %}
+    </div>
+
+    <!--<em>{{ help_page }}</em>-->
     <img src="{% static 'images/image.jpeg' %}" alt="My image">
     <!-- This works -->
   </body>
