@@ -15,11 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from helpapp import views,forms
+from helpapp import views
 
 urlpatterns = [
     path('',views.index,name='index'),
     path('admin/', admin.site.urls),
-    path('forms/',include('helpapp.urls')),
-    path('help/',include('helpapp.urls')),
+    path('forms/',views.form_name_view,name='form-name'),
+    path('help/',views.help,name='helpapp'),
 ]
