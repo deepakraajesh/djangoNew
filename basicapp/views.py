@@ -1,7 +1,8 @@
 from django.shortcuts import render
 
 def index(request):
-    return render(request,'basicapp/index.html')
+    dictd = {'text':'hello world!!..'}
+    return render(request,'basicapp/index.html',context={'form':dictd})
 
 def basicapp(request):
     return render(request,'basicapp/base.html')
